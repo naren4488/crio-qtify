@@ -1,10 +1,10 @@
 import React from "react";
-import "./Button.css";
+import style from "./Button.module.css";
 
 export default function Button({ children }) {
   return (
     <div >
-      <button className="button">{children}</button>
+      <button className={style.button}>{children}</button>
     </div>
   );
 }
