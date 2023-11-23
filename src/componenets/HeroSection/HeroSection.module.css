@@ -1,0 +1,24 @@
+.wrapper {
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-black);
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 799px;
+  height: 212px;
+}
+
+.para {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  height: 100px;
+  width: 556px;
+}
