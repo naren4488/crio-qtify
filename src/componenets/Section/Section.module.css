@@ -1,0 +1,30 @@
+.wrapper{
+    height: 536px;
+    /* border: solid 1px red; */
+    padding: 0 32px;
+}
+
+.gridHeading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.albumType{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.collapseBtn{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-primary);
+    background-color: var(--color-black);
+    border: none;
+    cursor: pointer;
+}
+
+.albums{
+    /* border: solid 1px green; */
+    height: 488px;
+    margin-top: 18px;
+}

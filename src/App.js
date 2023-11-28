@@ -2,6 +2,8 @@ import React from 'react'
 import './App.css';
 import Navbar from './componenets/Navbar/Navbar';
 import HeroSection from './componenets/HeroSection/HeroSection';
+import Card from './componenets/Card/Card';
+import Section from './componenets/Section/Section';
 
 
 function App() {
@@ -9,6 +11,8 @@ function App() {
     <div className="App">
       <Navbar/>
       <HeroSection/>
+      <Section/>
+      {/* <Card/> */}
     </div>
   );
 }

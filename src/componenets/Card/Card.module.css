@@ -1,0 +1,50 @@
+.wrapper {
+  height: 232px;
+  width: 159px;
+}
+
+.card {
+  height: 205px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card img {
+  height: 170px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.banner {
+  height: 35px;
+  background-color: var(--color-white);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.pill {
+  background-color: var(--color-black) !important;
+  color: var(--color-white) !important;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-weight: 400;
+}
+
+.title {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 14px;
+  margin-top: 6px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
