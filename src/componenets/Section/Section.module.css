@@ -1,5 +1,5 @@
 .wrapper{
-    height: 536px;
+    /* height: 536px; */
     /* border: solid 1px red; */
     padding: 0 32px;
 }
@@ -7,6 +7,7 @@
 .gridHeading{
     display: flex;
     justify-content: space-between;
+   
 }
 
 .albumType{
@@ -23,8 +24,9 @@
     cursor: pointer;
 }
 
-.albums{
+.albumsWrapper{
     /* border: solid 1px green; */
-    height: 488px;
+    /* height: 488px; */
     margin-top: 18px;
 }
+

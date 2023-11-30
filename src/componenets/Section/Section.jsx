@@ -1,51 +1,58 @@
 import React, { useEffect, useState } from "react";
-import style from "./Section.module.css";
-import axios from "axios";
-import { Grid } from "@mui/material";
+import { CircularProgress, Grid } from "@mui/material";
 import Card from "../Card/Card";
+import Carousel from "../Carousel/Carousel";
+import style from "./Section.module.css";
+// import axios from "axios";
+import apiData from "./../../api/api.json";
 
-export default function Section() {
-  let [apiData, setApiData] = useState([]);
+export default function Section({ title, data }) {
 
-  let getApiData = async () => {
-    let apiURL = "https://qtify-backend-labs.crio.do/albums/top";
-    try {
-      let response = await axios.get(apiURL);
-      return response.data;
-    } catch (e) {
-      console.log(e);
-    }
+  const [carouselToggle, setCarouselToggle] = useState(true);
+
+  let handleToggle = () => {
+    setCarouselToggle(!carouselToggle);
   };
 
-  useEffect(() => {
-    (async () => {
-      let data = await getApiData();
-      console.log("data ", data);
-      setApiData(data);
-    })();
-  }, []); 
+ 
+
+  // data = apiData;
 
   return (
-    
     <div className={style.wrapper}>
       <div className={style.grid}>
         <div className={style.gridHeading}>
-          <h2 className={style.albumType}>Top Albums</h2>
-          <button className={style.collapseBtn}>Collapse</button>
+          <h2 className={style.albumType}>{title}</h2>
+          <button className={style.collapseBtn} onClick={handleToggle}>
+            {carouselToggle ? "Show All" : "Collapse"}
+          </button>
         </div>
-        <div className={style.albums}>
-          <Grid container columnSpacing={5} rowSpacing={3}>
-            {apiData.map((dataItem) => {
-                // console.log('inside map', dataItem.id);
-                const {title, image, slug, follows} = dataItem;
-              return (
-                <Grid key={dataItem.id} item>
-                  <Card title={title} image={image} slug={slug} follows={follows} type={'album'} />
+        {data.length === 0 ? (
+          <CircularProgress />
+        ) : (
+          <div className={style.albumsWrapper}>
+            {carouselToggle ? (
+              <Carousel 
+                data={data}
+                renderComponent={(data) => <Card data={data} type="album" />}
+              />
+            ) : (
+             
+                <Grid container columnSpacing={5} rowSpacing={3}>
+                  {data.map((dataItem) => {
+                    // console.log('inside map', dataItem.id);
+                    // const { title, image, slug, follows } = dataItem;
+                    return (
+                      <Grid key={dataItem.id} item>
+                        <Card data={dataItem} type={"album"} />
+                      </Grid>
+                    );
+                  })}
                 </Grid>
-              );
-            })}
-          </Grid>
-        </div>
+
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
