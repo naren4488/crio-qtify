@@ -6,7 +6,7 @@ import { ReactComponent as RightArrow } from "./../../../assets/rightarrow.svg";
 export default function RightNav() {
   const swiper = useSwiper();
   const [isEnd, setIsEnd] = useState(swiper.isEnd);
-  console.log('from rightnav isEnd: ',isEnd)
+  // console.log('from rightnav isEnd: ',isEnd)
 
   useEffect(() => {
     swiper.on("slideChange", function() {

@@ -11,7 +11,7 @@ const Controls = ({ data }) => {
   const swiper = useSwiper();
   useEffect(() => {
     swiper.slideTo(0, 1);
-    console.log("useeffect of control");
+    // console.log("useeffect of control");
   }, [data]);
 };
 

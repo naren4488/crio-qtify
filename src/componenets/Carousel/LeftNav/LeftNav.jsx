@@ -7,11 +7,11 @@ export default function LeftNav() {
   const swiper = useSwiper();
   const [isBeginning, setIsBeginning] = useState(swiper.isBeginning);
   // let [count, setCount] = useState(0);
-  console.log("leftnavigation is beginning", isBeginning);
+  // console.log("leftnavigation is beginning", isBeginning);
 
   useEffect(() => {
     swiper.on("slideChange", function() {
-      console.log("slidechange is running in leftNav");
+      // console.log("slidechange is running in leftNav");
       setIsBeginning(swiper.isBeginning);
       // console.log(swiper.isBeginning);
     });
