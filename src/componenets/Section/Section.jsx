@@ -35,7 +35,7 @@ export default function Section({ title, data, filterSource, type }) {
   }, []);
 
 
-  data = apiData;
+  // data = apiData;
 
   const showFilters = filters.length > 1;
   const cardsToRender = data.filter((card) => {
